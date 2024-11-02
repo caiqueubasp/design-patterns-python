@@ -41,6 +41,10 @@ Design patterns are typical solutions to common problems in software design. The
 - **Template Method**: Defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
 - **Visitor**: Represents an operation to be performed on the elements of an object structure.
 
+### Architectural Patterns
+- **Model-View-Controller (MVC)**: Separates an application into three main components: the model (data), the view (user interface), and the controller (business logic). This separation helps manage complex applications by promoting organized code and separation of concerns.
+
 ## Conclusion
 
 Understanding and applying design patterns can significantly improve the quality and maintainability of your software. They provide a shared language and proven solutions to common problems, making it easier to communicate and collaborate with other developers.
+
