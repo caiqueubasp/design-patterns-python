@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Listagem de Produtos</title>
+{% end %}
+{% block body %}
+    {% if produtos %}
+    <h1>Listagem de Produtos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Status</th>
+                <th>Atualizar</th>
+                <th>Deletar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product[0] }}</td>
+                    <td>{{ product[1] }}</td>
+                    <td>{{ product[2] }}</td>
+
+                    {% if product[3] == 1 %}
+                        <td>Ativo</td>
+                    {% else %}
+                        <td>Inativo</td>
+                    {% end %}
+
+                    {% if product[3] == 1 %}
+                        <td><a class="btn btn-warning" href="/produto/update/{{ produto[0] }}/status/0" class="btn btn-warning">Inativar</a></td>
+                    {% else %}
+                        <td><a class="btn btn-success" href="/produto/update/{{ produto[0] }}/status/1" class="btn btn-warning">Ativar</a></td>
+                    {% end %}
+                    <td><a class="btn btn-danger" href="/produto/delete/{{ produto[0] }}" class="btn btn-danger">Deletar</a></td>
+                </tr>
+            {% end %}
+        </tbody>
+    </table>
+{% else %}
+    <h1>Não há produtos cadastrados</h1>
+{% end %}
+<div>
+    <a class="btn btn-primary" href="/produto/novo">Cadastrar Produto</a>
+</div>
+{% end %}
